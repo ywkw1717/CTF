@@ -1,0 +1,415 @@
+
+libcallme32.so:     ファイル形式 elf32-i386
+
+
+セクション .init の逆アセンブル:
+
+000004d4 <_init>:
+ 4d4:	53                   	push   ebx
+ 4d5:	83 ec 08             	sub    esp,0x8
+ 4d8:	e8 c3 00 00 00       	call   5a0 <__x86.get_pc_thunk.bx>
+ 4dd:	81 c3 23 1b 00 00    	add    ebx,0x1b23
+ 4e3:	8b 83 f4 ff ff ff    	mov    eax,DWORD PTR [ebx-0xc]
+ 4e9:	85 c0                	test   eax,eax
+ 4eb:	74 05                	je     4f2 <_init+0x1e>
+ 4ed:	e8 a6 00 00 00       	call   598 <fgetc@plt+0x18>
+ 4f2:	83 c4 08             	add    esp,0x8
+ 4f5:	5b                   	pop    ebx
+ 4f6:	c3                   	ret    
+
+セクション .plt の逆アセンブル:
+
+00000500 <printf@plt-0x10>:
+ 500:	ff b3 04 00 00 00    	push   DWORD PTR [ebx+0x4]
+ 506:	ff a3 08 00 00 00    	jmp    DWORD PTR [ebx+0x8]
+ 50c:	00 00                	add    BYTE PTR [eax],al
+	...
+
+00000510 <printf@plt>:
+ 510:	ff a3 0c 00 00 00    	jmp    DWORD PTR [ebx+0xc]
+ 516:	68 00 00 00 00       	push   0x0
+ 51b:	e9 e0 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000520 <fgets@plt>:
+ 520:	ff a3 10 00 00 00    	jmp    DWORD PTR [ebx+0x10]
+ 526:	68 08 00 00 00       	push   0x8
+ 52b:	e9 d0 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000530 <fclose@plt>:
+ 530:	ff a3 14 00 00 00    	jmp    DWORD PTR [ebx+0x14]
+ 536:	68 10 00 00 00       	push   0x10
+ 53b:	e9 c0 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000540 <malloc@plt>:
+ 540:	ff a3 18 00 00 00    	jmp    DWORD PTR [ebx+0x18]
+ 546:	68 18 00 00 00       	push   0x18
+ 54b:	e9 b0 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000550 <puts@plt>:
+ 550:	ff a3 1c 00 00 00    	jmp    DWORD PTR [ebx+0x1c]
+ 556:	68 20 00 00 00       	push   0x20
+ 55b:	e9 a0 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000560 <exit@plt>:
+ 560:	ff a3 20 00 00 00    	jmp    DWORD PTR [ebx+0x20]
+ 566:	68 28 00 00 00       	push   0x28
+ 56b:	e9 90 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000570 <fopen@plt>:
+ 570:	ff a3 24 00 00 00    	jmp    DWORD PTR [ebx+0x24]
+ 576:	68 30 00 00 00       	push   0x30
+ 57b:	e9 80 ff ff ff       	jmp    500 <_init+0x2c>
+
+00000580 <fgetc@plt>:
+ 580:	ff a3 28 00 00 00    	jmp    DWORD PTR [ebx+0x28]
+ 586:	68 38 00 00 00       	push   0x38
+ 58b:	e9 70 ff ff ff       	jmp    500 <_init+0x2c>
+
+セクション .plt.got の逆アセンブル:
+
+00000590 <.plt.got>:
+ 590:	ff a3 f0 ff ff ff    	jmp    DWORD PTR [ebx-0x10]
+ 596:	66 90                	xchg   ax,ax
+ 598:	ff a3 f4 ff ff ff    	jmp    DWORD PTR [ebx-0xc]
+ 59e:	66 90                	xchg   ax,ax
+
+セクション .text の逆アセンブル:
+
+000005a0 <__x86.get_pc_thunk.bx>:
+ 5a0:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+ 5a3:	c3                   	ret    
+ 5a4:	66 90                	xchg   ax,ax
+ 5a6:	66 90                	xchg   ax,ax
+ 5a8:	66 90                	xchg   ax,ax
+ 5aa:	66 90                	xchg   ax,ax
+ 5ac:	66 90                	xchg   ax,ax
+ 5ae:	66 90                	xchg   ax,ax
+
+000005b0 <deregister_tm_clones>:
+ 5b0:	e8 17 01 00 00       	call   6cc <__x86.get_pc_thunk.dx>
+ 5b5:	81 c2 4b 1a 00 00    	add    edx,0x1a4b
+ 5bb:	8d 8a 30 00 00 00    	lea    ecx,[edx+0x30]
+ 5c1:	8d 82 33 00 00 00    	lea    eax,[edx+0x33]
+ 5c7:	29 c8                	sub    eax,ecx
+ 5c9:	83 f8 06             	cmp    eax,0x6
+ 5cc:	76 17                	jbe    5e5 <deregister_tm_clones+0x35>
+ 5ce:	8b 82 ec ff ff ff    	mov    eax,DWORD PTR [edx-0x14]
+ 5d4:	85 c0                	test   eax,eax
+ 5d6:	74 0d                	je     5e5 <deregister_tm_clones+0x35>
+ 5d8:	55                   	push   ebp
+ 5d9:	89 e5                	mov    ebp,esp
+ 5db:	83 ec 14             	sub    esp,0x14
+ 5de:	51                   	push   ecx
+ 5df:	ff d0                	call   eax
+ 5e1:	83 c4 10             	add    esp,0x10
+ 5e4:	c9                   	leave  
+ 5e5:	f3 c3                	repz ret 
+ 5e7:	89 f6                	mov    esi,esi
+ 5e9:	8d bc 27 00 00 00 00 	lea    edi,[edi+eiz*1+0x0]
+
+000005f0 <register_tm_clones>:
+ 5f0:	e8 d7 00 00 00       	call   6cc <__x86.get_pc_thunk.dx>
+ 5f5:	81 c2 0b 1a 00 00    	add    edx,0x1a0b
+ 5fb:	55                   	push   ebp
+ 5fc:	8d 8a 30 00 00 00    	lea    ecx,[edx+0x30]
+ 602:	8d 82 30 00 00 00    	lea    eax,[edx+0x30]
+ 608:	89 e5                	mov    ebp,esp
+ 60a:	53                   	push   ebx
+ 60b:	29 c8                	sub    eax,ecx
+ 60d:	c1 f8 02             	sar    eax,0x2
+ 610:	83 ec 04             	sub    esp,0x4
+ 613:	89 c3                	mov    ebx,eax
+ 615:	c1 eb 1f             	shr    ebx,0x1f
+ 618:	01 d8                	add    eax,ebx
+ 61a:	d1 f8                	sar    eax,1
+ 61c:	74 14                	je     632 <register_tm_clones+0x42>
+ 61e:	8b 92 fc ff ff ff    	mov    edx,DWORD PTR [edx-0x4]
+ 624:	85 d2                	test   edx,edx
+ 626:	74 0a                	je     632 <register_tm_clones+0x42>
+ 628:	83 ec 08             	sub    esp,0x8
+ 62b:	50                   	push   eax
+ 62c:	51                   	push   ecx
+ 62d:	ff d2                	call   edx
+ 62f:	83 c4 10             	add    esp,0x10
+ 632:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+ 635:	c9                   	leave  
+ 636:	c3                   	ret    
+ 637:	89 f6                	mov    esi,esi
+ 639:	8d bc 27 00 00 00 00 	lea    edi,[edi+eiz*1+0x0]
+
+00000640 <__do_global_dtors_aux>:
+ 640:	55                   	push   ebp
+ 641:	89 e5                	mov    ebp,esp
+ 643:	53                   	push   ebx
+ 644:	e8 57 ff ff ff       	call   5a0 <__x86.get_pc_thunk.bx>
+ 649:	81 c3 b7 19 00 00    	add    ebx,0x19b7
+ 64f:	83 ec 04             	sub    esp,0x4
+ 652:	80 bb 30 00 00 00 00 	cmp    BYTE PTR [ebx+0x30],0x0
+ 659:	75 27                	jne    682 <__do_global_dtors_aux+0x42>
+ 65b:	8b 83 f0 ff ff ff    	mov    eax,DWORD PTR [ebx-0x10]
+ 661:	85 c0                	test   eax,eax
+ 663:	74 11                	je     676 <__do_global_dtors_aux+0x36>
+ 665:	83 ec 0c             	sub    esp,0xc
+ 668:	ff b3 2c 00 00 00    	push   DWORD PTR [ebx+0x2c]
+ 66e:	e8 1d ff ff ff       	call   590 <fgetc@plt+0x10>
+ 673:	83 c4 10             	add    esp,0x10
+ 676:	e8 35 ff ff ff       	call   5b0 <deregister_tm_clones>
+ 67b:	c6 83 30 00 00 00 01 	mov    BYTE PTR [ebx+0x30],0x1
+ 682:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+ 685:	c9                   	leave  
+ 686:	c3                   	ret    
+ 687:	89 f6                	mov    esi,esi
+ 689:	8d bc 27 00 00 00 00 	lea    edi,[edi+eiz*1+0x0]
+
+00000690 <frame_dummy>:
+ 690:	e8 37 00 00 00       	call   6cc <__x86.get_pc_thunk.dx>
+ 695:	81 c2 6b 19 00 00    	add    edx,0x196b
+ 69b:	8d 82 08 ff ff ff    	lea    eax,[edx-0xf8]
+ 6a1:	8b 08                	mov    ecx,DWORD PTR [eax]
+ 6a3:	85 c9                	test   ecx,ecx
+ 6a5:	75 09                	jne    6b0 <frame_dummy+0x20>
+ 6a7:	e9 44 ff ff ff       	jmp    5f0 <register_tm_clones>
+ 6ac:	8d 74 26 00          	lea    esi,[esi+eiz*1+0x0]
+ 6b0:	8b 92 f8 ff ff ff    	mov    edx,DWORD PTR [edx-0x8]
+ 6b6:	85 d2                	test   edx,edx
+ 6b8:	74 ed                	je     6a7 <frame_dummy+0x17>
+ 6ba:	55                   	push   ebp
+ 6bb:	89 e5                	mov    ebp,esp
+ 6bd:	83 ec 14             	sub    esp,0x14
+ 6c0:	50                   	push   eax
+ 6c1:	ff d2                	call   edx
+ 6c3:	83 c4 10             	add    esp,0x10
+ 6c6:	c9                   	leave  
+ 6c7:	e9 24 ff ff ff       	jmp    5f0 <register_tm_clones>
+
+000006cc <__x86.get_pc_thunk.dx>:
+ 6cc:	8b 14 24             	mov    edx,DWORD PTR [esp]
+ 6cf:	c3                   	ret    
+
+000006d0 <callme_one>:
+ 6d0:	55                   	push   ebp
+ 6d1:	89 e5                	mov    ebp,esp
+ 6d3:	53                   	push   ebx
+ 6d4:	83 ec 14             	sub    esp,0x14
+ 6d7:	e8 c4 fe ff ff       	call   5a0 <__x86.get_pc_thunk.bx>
+ 6dc:	81 c3 24 19 00 00    	add    ebx,0x1924
+ 6e2:	83 7d 08 01          	cmp    DWORD PTR [ebp+0x8],0x1
+ 6e6:	0f 85 bf 00 00 00    	jne    7ab <callme_one+0xdb>
+ 6ec:	83 7d 0c 02          	cmp    DWORD PTR [ebp+0xc],0x2
+ 6f0:	0f 85 b5 00 00 00    	jne    7ab <callme_one+0xdb>
+ 6f6:	83 7d 10 03          	cmp    DWORD PTR [ebp+0x10],0x3
+ 6fa:	0f 85 ab 00 00 00    	jne    7ab <callme_one+0xdb>
+ 700:	c7 45 f4 00 00 00 00 	mov    DWORD PTR [ebp-0xc],0x0
+ 707:	83 ec 08             	sub    esp,0x8
+ 70a:	8d 83 c4 e9 ff ff    	lea    eax,[ebx-0x163c]
+ 710:	50                   	push   eax
+ 711:	8d 83 c6 e9 ff ff    	lea    eax,[ebx-0x163a]
+ 717:	50                   	push   eax
+ 718:	e8 53 fe ff ff       	call   570 <fopen@plt>
+ 71d:	83 c4 10             	add    esp,0x10
+ 720:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+ 723:	83 7d f4 00          	cmp    DWORD PTR [ebp-0xc],0x0
+ 727:	75 1c                	jne    745 <callme_one+0x75>
+ 729:	83 ec 0c             	sub    esp,0xc
+ 72c:	8d 83 dc e9 ff ff    	lea    eax,[ebx-0x1624]
+ 732:	50                   	push   eax
+ 733:	e8 18 fe ff ff       	call   550 <puts@plt>
+ 738:	83 c4 10             	add    esp,0x10
+ 73b:	83 ec 0c             	sub    esp,0xc
+ 73e:	6a 01                	push   0x1
+ 740:	e8 1b fe ff ff       	call   560 <exit@plt>
+ 745:	83 ec 0c             	sub    esp,0xc
+ 748:	6a 21                	push   0x21
+ 74a:	e8 f1 fd ff ff       	call   540 <malloc@plt>
+ 74f:	83 c4 10             	add    esp,0x10
+ 752:	89 83 34 00 00 00    	mov    DWORD PTR [ebx+0x34],eax
+ 758:	8b 83 34 00 00 00    	mov    eax,DWORD PTR [ebx+0x34]
+ 75e:	85 c0                	test   eax,eax
+ 760:	75 1c                	jne    77e <callme_one+0xae>
+ 762:	83 ec 0c             	sub    esp,0xc
+ 765:	8d 83 fe e9 ff ff    	lea    eax,[ebx-0x1602]
+ 76b:	50                   	push   eax
+ 76c:	e8 df fd ff ff       	call   550 <puts@plt>
+ 771:	83 c4 10             	add    esp,0x10
+ 774:	83 ec 0c             	sub    esp,0xc
+ 777:	6a 01                	push   0x1
+ 779:	e8 e2 fd ff ff       	call   560 <exit@plt>
+ 77e:	8b 83 34 00 00 00    	mov    eax,DWORD PTR [ebx+0x34]
+ 784:	83 ec 04             	sub    esp,0x4
+ 787:	ff 75 f4             	push   DWORD PTR [ebp-0xc]
+ 78a:	6a 21                	push   0x21
+ 78c:	50                   	push   eax
+ 78d:	e8 8e fd ff ff       	call   520 <fgets@plt>
+ 792:	83 c4 10             	add    esp,0x10
+ 795:	89 83 34 00 00 00    	mov    DWORD PTR [ebx+0x34],eax
+ 79b:	83 ec 0c             	sub    esp,0xc
+ 79e:	ff 75 f4             	push   DWORD PTR [ebp-0xc]
+ 7a1:	e8 8a fd ff ff       	call   530 <fclose@plt>
+ 7a6:	83 c4 10             	add    esp,0x10
+ 7a9:	eb 1c                	jmp    7c7 <callme_one+0xf7>
+ 7ab:	83 ec 0c             	sub    esp,0xc
+ 7ae:	8d 83 18 ea ff ff    	lea    eax,[ebx-0x15e8]
+ 7b4:	50                   	push   eax
+ 7b5:	e8 96 fd ff ff       	call   550 <puts@plt>
+ 7ba:	83 c4 10             	add    esp,0x10
+ 7bd:	83 ec 0c             	sub    esp,0xc
+ 7c0:	6a 01                	push   0x1
+ 7c2:	e8 99 fd ff ff       	call   560 <exit@plt>
+ 7c7:	90                   	nop
+ 7c8:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+ 7cb:	c9                   	leave  
+ 7cc:	c3                   	ret    
+
+000007cd <callme_two>:
+ 7cd:	55                   	push   ebp
+ 7ce:	89 e5                	mov    ebp,esp
+ 7d0:	56                   	push   esi
+ 7d1:	53                   	push   ebx
+ 7d2:	83 ec 10             	sub    esp,0x10
+ 7d5:	e8 c6 fd ff ff       	call   5a0 <__x86.get_pc_thunk.bx>
+ 7da:	81 c3 26 18 00 00    	add    ebx,0x1826
+ 7e0:	83 7d 08 01          	cmp    DWORD PTR [ebp+0x8],0x1
+ 7e4:	0f 85 a4 00 00 00    	jne    88e <callme_two+0xc1>
+ 7ea:	83 7d 0c 02          	cmp    DWORD PTR [ebp+0xc],0x2
+ 7ee:	0f 85 9a 00 00 00    	jne    88e <callme_two+0xc1>
+ 7f4:	83 7d 10 03          	cmp    DWORD PTR [ebp+0x10],0x3
+ 7f8:	0f 85 90 00 00 00    	jne    88e <callme_two+0xc1>
+ 7fe:	c7 45 f4 00 00 00 00 	mov    DWORD PTR [ebp-0xc],0x0
+ 805:	83 ec 08             	sub    esp,0x8
+ 808:	8d 83 c4 e9 ff ff    	lea    eax,[ebx-0x163c]
+ 80e:	50                   	push   eax
+ 80f:	8d 83 2d ea ff ff    	lea    eax,[ebx-0x15d3]
+ 815:	50                   	push   eax
+ 816:	e8 55 fd ff ff       	call   570 <fopen@plt>
+ 81b:	83 c4 10             	add    esp,0x10
+ 81e:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+ 821:	83 7d f4 00          	cmp    DWORD PTR [ebp-0xc],0x0
+ 825:	75 1c                	jne    843 <callme_two+0x76>
+ 827:	83 ec 0c             	sub    esp,0xc
+ 82a:	8d 83 36 ea ff ff    	lea    eax,[ebx-0x15ca]
+ 830:	50                   	push   eax
+ 831:	e8 1a fd ff ff       	call   550 <puts@plt>
+ 836:	83 c4 10             	add    esp,0x10
+ 839:	83 ec 0c             	sub    esp,0xc
+ 83c:	6a 01                	push   0x1
+ 83e:	e8 1d fd ff ff       	call   560 <exit@plt>
+ 843:	c7 45 f0 00 00 00 00 	mov    DWORD PTR [ebp-0x10],0x0
+ 84a:	c7 45 f0 00 00 00 00 	mov    DWORD PTR [ebp-0x10],0x0
+ 851:	eb 33                	jmp    886 <callme_two+0xb9>
+ 853:	83 ec 0c             	sub    esp,0xc
+ 856:	ff 75 f4             	push   DWORD PTR [ebp-0xc]
+ 859:	e8 22 fd ff ff       	call   580 <fgetc@plt>
+ 85e:	83 c4 10             	add    esp,0x10
+ 861:	89 c6                	mov    esi,eax
+ 863:	8b 93 34 00 00 00    	mov    edx,DWORD PTR [ebx+0x34]
+ 869:	8b 45 f0             	mov    eax,DWORD PTR [ebp-0x10]
+ 86c:	01 d0                	add    eax,edx
+ 86e:	8b 8b 34 00 00 00    	mov    ecx,DWORD PTR [ebx+0x34]
+ 874:	8b 55 f0             	mov    edx,DWORD PTR [ebp-0x10]
+ 877:	01 ca                	add    edx,ecx
+ 879:	0f b6 12             	movzx  edx,BYTE PTR [edx]
+ 87c:	89 f1                	mov    ecx,esi
+ 87e:	31 ca                	xor    edx,ecx
+ 880:	88 10                	mov    BYTE PTR [eax],dl
+ 882:	83 45 f0 01          	add    DWORD PTR [ebp-0x10],0x1
+ 886:	83 7d f0 0f          	cmp    DWORD PTR [ebp-0x10],0xf
+ 88a:	7e c7                	jle    853 <callme_two+0x86>
+ 88c:	eb 1c                	jmp    8aa <callme_two+0xdd>
+ 88e:	83 ec 0c             	sub    esp,0xc
+ 891:	8d 83 18 ea ff ff    	lea    eax,[ebx-0x15e8]
+ 897:	50                   	push   eax
+ 898:	e8 b3 fc ff ff       	call   550 <puts@plt>
+ 89d:	83 c4 10             	add    esp,0x10
+ 8a0:	83 ec 0c             	sub    esp,0xc
+ 8a3:	6a 01                	push   0x1
+ 8a5:	e8 b6 fc ff ff       	call   560 <exit@plt>
+ 8aa:	90                   	nop
+ 8ab:	8d 65 f8             	lea    esp,[ebp-0x8]
+ 8ae:	5b                   	pop    ebx
+ 8af:	5e                   	pop    esi
+ 8b0:	5d                   	pop    ebp
+ 8b1:	c3                   	ret    
+
+000008b2 <callme_three>:
+ 8b2:	55                   	push   ebp
+ 8b3:	89 e5                	mov    ebp,esp
+ 8b5:	56                   	push   esi
+ 8b6:	53                   	push   ebx
+ 8b7:	83 ec 10             	sub    esp,0x10
+ 8ba:	e8 e1 fc ff ff       	call   5a0 <__x86.get_pc_thunk.bx>
+ 8bf:	81 c3 41 17 00 00    	add    ebx,0x1741
+ 8c5:	83 7d 08 01          	cmp    DWORD PTR [ebp+0x8],0x1
+ 8c9:	0f 85 c5 00 00 00    	jne    994 <callme_three+0xe2>
+ 8cf:	83 7d 0c 02          	cmp    DWORD PTR [ebp+0xc],0x2
+ 8d3:	0f 85 bb 00 00 00    	jne    994 <callme_three+0xe2>
+ 8d9:	83 7d 10 03          	cmp    DWORD PTR [ebp+0x10],0x3
+ 8dd:	0f 85 b1 00 00 00    	jne    994 <callme_three+0xe2>
+ 8e3:	c7 45 f4 00 00 00 00 	mov    DWORD PTR [ebp-0xc],0x0
+ 8ea:	83 ec 08             	sub    esp,0x8
+ 8ed:	8d 83 c4 e9 ff ff    	lea    eax,[ebx-0x163c]
+ 8f3:	50                   	push   eax
+ 8f4:	8d 83 4e ea ff ff    	lea    eax,[ebx-0x15b2]
+ 8fa:	50                   	push   eax
+ 8fb:	e8 70 fc ff ff       	call   570 <fopen@plt>
+ 900:	83 c4 10             	add    esp,0x10
+ 903:	89 45 f4             	mov    DWORD PTR [ebp-0xc],eax
+ 906:	83 7d f4 00          	cmp    DWORD PTR [ebp-0xc],0x0
+ 90a:	75 1c                	jne    928 <callme_three+0x76>
+ 90c:	83 ec 0c             	sub    esp,0xc
+ 90f:	8d 83 57 ea ff ff    	lea    eax,[ebx-0x15a9]
+ 915:	50                   	push   eax
+ 916:	e8 35 fc ff ff       	call   550 <puts@plt>
+ 91b:	83 c4 10             	add    esp,0x10
+ 91e:	83 ec 0c             	sub    esp,0xc
+ 921:	6a 01                	push   0x1
+ 923:	e8 38 fc ff ff       	call   560 <exit@plt>
+ 928:	c7 45 f0 10 00 00 00 	mov    DWORD PTR [ebp-0x10],0x10
+ 92f:	c7 45 f0 10 00 00 00 	mov    DWORD PTR [ebp-0x10],0x10
+ 936:	eb 33                	jmp    96b <callme_three+0xb9>
+ 938:	83 ec 0c             	sub    esp,0xc
+ 93b:	ff 75 f4             	push   DWORD PTR [ebp-0xc]
+ 93e:	e8 3d fc ff ff       	call   580 <fgetc@plt>
+ 943:	83 c4 10             	add    esp,0x10
+ 946:	89 c6                	mov    esi,eax
+ 948:	8b 93 34 00 00 00    	mov    edx,DWORD PTR [ebx+0x34]
+ 94e:	8b 45 f0             	mov    eax,DWORD PTR [ebp-0x10]
+ 951:	01 d0                	add    eax,edx
+ 953:	8b 8b 34 00 00 00    	mov    ecx,DWORD PTR [ebx+0x34]
+ 959:	8b 55 f0             	mov    edx,DWORD PTR [ebp-0x10]
+ 95c:	01 ca                	add    edx,ecx
+ 95e:	0f b6 12             	movzx  edx,BYTE PTR [edx]
+ 961:	89 f1                	mov    ecx,esi
+ 963:	31 ca                	xor    edx,ecx
+ 965:	88 10                	mov    BYTE PTR [eax],dl
+ 967:	83 45 f0 01          	add    DWORD PTR [ebp-0x10],0x1
+ 96b:	83 7d f0 1f          	cmp    DWORD PTR [ebp-0x10],0x1f
+ 96f:	7e c7                	jle    938 <callme_three+0x86>
+ 971:	8b 83 34 00 00 00    	mov    eax,DWORD PTR [ebx+0x34]
+ 977:	83 ec 08             	sub    esp,0x8
+ 97a:	50                   	push   eax
+ 97b:	8d 83 6f ea ff ff    	lea    eax,[ebx-0x1591]
+ 981:	50                   	push   eax
+ 982:	e8 89 fb ff ff       	call   510 <printf@plt>
+ 987:	83 c4 10             	add    esp,0x10
+ 98a:	83 ec 0c             	sub    esp,0xc
+ 98d:	6a 00                	push   0x0
+ 98f:	e8 cc fb ff ff       	call   560 <exit@plt>
+ 994:	83 ec 0c             	sub    esp,0xc
+ 997:	8d 83 18 ea ff ff    	lea    eax,[ebx-0x15e8]
+ 99d:	50                   	push   eax
+ 99e:	e8 ad fb ff ff       	call   550 <puts@plt>
+ 9a3:	83 c4 10             	add    esp,0x10
+ 9a6:	83 ec 0c             	sub    esp,0xc
+ 9a9:	6a 01                	push   0x1
+ 9ab:	e8 b0 fb ff ff       	call   560 <exit@plt>
+
+セクション .fini の逆アセンブル:
+
+000009b0 <_fini>:
+ 9b0:	53                   	push   ebx
+ 9b1:	83 ec 08             	sub    esp,0x8
+ 9b4:	e8 e7 fb ff ff       	call   5a0 <__x86.get_pc_thunk.bx>
+ 9b9:	81 c3 47 16 00 00    	add    ebx,0x1647
+ 9bf:	83 c4 08             	add    esp,0x8
+ 9c2:	5b                   	pop    ebx
+ 9c3:	c3                   	ret    
