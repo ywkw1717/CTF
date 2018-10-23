@@ -1,3 +1,5 @@
 peda-session-?*.txt
 .gdb_history
 .?*.swp
+memo
+core
