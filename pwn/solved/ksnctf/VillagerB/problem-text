@@ -1,0 +1,16 @@
+To be more secure I enabled several security options as follows:
+- Randomized addresses of the program (-pie)
+- Protected the stack (-fstack-protector-all)
+- Made GOT read-only (-Wl,-z,relro,-z,now)
+- Executed via xinetd
+- Inserted a wait in order to prevent brute force attacks
+- Ascii armor is enabled
+
+Can you still crack it?
+nc/telnet ctfq.sweetduet.info 10001
+
+Hint:
+- The program is http://ctfq.sweetduet.info:10080/~q23/villager
+- The flag is in /home/q23/flag.txt
+- This will help you: http://ctfq.sweetduet.info:10080/~q23/libc.so.6
+- Outbound packets are filterd. So, you cannot use (reverse) shells.

